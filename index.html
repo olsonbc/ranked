@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ranked — rank books, films and TV with your circle</title>
+  <meta name="description" content="Ranked builds your personal ranked lists of books, films and TV one comparison at a time, and shares them with a small circle of friends whose taste you trust.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500&display=swap">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="wordmark" href="./" aria-label="Ranked home">
+        <picture>
+          <source srcset="assets/ranked-dark-wordmark.svg" media="(prefers-color-scheme: dark)">
+          <img src="assets/ranked-light-wordmark.svg" alt="Ranked">
+        </picture>
+      </a>
+      <nav class="site-nav" aria-label="Site">
+        <a href="privacy.html">Privacy</a>
+        <a href="support.html">Support</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div>
+          <h1>Your favorite books, films and shows, in order.</h1>
+          <p class="lede">Ranked builds your list one choice at a time: did you like this more than that? Share your lists with a few friends, and find your next book or show from the people whose taste you actually trust.</p>
+          <p class="status">In development for iPhone and Android.</p>
+        </div>
+
+        <figure class="list-card" aria-label="Example ranked list">
+          <h2>Sarah’s books</h2>
+          <ol class="ranked">
+            <li><span class="rank" aria-hidden="true">1</span><span class="title">Middlemarch<span class="creator">George Eliot</span></span></li>
+            <li><span class="rank" aria-hidden="true">2</span><span class="title">The Brothers Karamazov<span class="creator">Fyodor Dostoevsky</span></span></li>
+            <li><span class="rank" aria-hidden="true">3</span><span class="title">Pachinko<span class="creator">Min Jin Lee</span></span></li>
+            <li><span class="rank" aria-hidden="true">4</span><span class="title">Gilead<span class="creator">Marilynne Robinson</span></span></li>
+            <li><span class="rank" aria-hidden="true">5</span><span class="title">The Road<span class="creator">Cormac McCarthy</span></span></li>
+          </ol>
+        </figure>
+      </div>
+    </section>
+
+    <section class="how" aria-label="How Ranked works">
+      <div class="wrap">
+        <div>
+          <h2>One choice at a time</h2>
+          <p>No stars. Ranked asks which you preferred, <span class="versus">Pachinko or Never Let Me Go?</span> A few answers place each title exactly where it belongs in your list.</p>
+        </div>
+        <div>
+          <h2>A circle, not an audience</h2>
+          <p>Share your lists with the five to twenty friends who share theirs back. No followers, no public counts, nothing visible outside your circle.</p>
+        </div>
+        <div>
+          <h2>What to read or watch next</h2>
+          <p>See what your circle loves that you haven’t gotten to yet, with a name and a rank on every pick. Save anything to Up Next for later.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Film and TV data from TMDB. This product uses the TMDB API but is not endorsed or certified by TMDB. Book data from Google Books.</p>
+      <nav aria-label="Footer">
+        <a href="privacy.html">Privacy policy</a>
+        <a href="support.html">Support</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

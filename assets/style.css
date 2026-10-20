@@ -1,0 +1,128 @@
+/* Ranked public site. Tokens mirror the app design spec (Design/ranked-design-spec.html v0.5). */
+:root {
+  --bg: #F5F4F0;
+  --surface: #FFFFFF;
+  --border: #E0DDD9;
+  --text: #13100D;
+  --text2: #4F4A45;
+  --text3: #6E6A67;
+  --accent: #2C6B57;
+  --accent-lt: #E8F2EE;
+  --gold: #B8941F;
+  --watch: #4A6FA5;
+  --display: 'Cormorant Garamond', Georgia, serif;
+  --body: 'Jost', system-ui, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111009;
+    --surface: #1C1A17;
+    --border: #32302C;
+    --text: #F0EDE8;
+    --text2: #BDB8B0;
+    --text3: #8C8985;
+    --accent: #3D8C6F;
+    --accent-lt: #1A3329;
+    --gold: #D4AC30;
+    --watch: #7BA3D8;
+    color-scheme: dark;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--body);
+  font-size: 1.0625rem;      /* 17px */
+  line-height: 1.6;
+}
+a { color: var(--accent); text-underline-offset: 0.18em; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+.wrap { max-width: 68rem; margin: 0 auto; padding: 0 1.25rem; }
+
+/* Header */
+.site-header { padding: 1.75rem 0 0; }
+.site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.wordmark img { display: block; height: 30px; width: auto; }
+.site-nav { display: flex; gap: 1.5rem; font-size: 0.9375rem; }
+.site-nav a { color: var(--text2); text-decoration: none; }
+.site-nav a:hover, .site-nav a[aria-current="page"] { color: var(--text); text-decoration: underline; }
+
+/* Landing hero: copy left, a ranked list right */
+.hero { padding: 4.5rem 0 4rem; }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 4rem; align-items: center; }
+.hero h1 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(2.5rem, 5.2vw, 4.25rem);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  margin: 0 0 1.5rem;
+  text-wrap: balance;
+}
+.hero .lede { font-size: 1.1875rem; color: var(--text2); max-width: 34rem; margin: 0 0 1.25rem; }
+.status { font-size: 0.9375rem; color: var(--text3); margin: 0; }
+
+/* The memorable element: a friend's list with large italic rank numerals */
+.list-card { margin: 0; background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 1.5rem 1.75rem 1rem; }
+.list-card h2 { font-family: var(--body); font-weight: 500; font-size: 0.9375rem; color: var(--text2); margin: 0 0 0.5rem; }
+.ranked { list-style: none; margin: 0; padding: 0; }
+.ranked li {
+  display: grid;
+  grid-template-columns: 3.25rem 1fr;
+  align-items: baseline;
+  padding: 0.7rem 0;
+  border-top: 1px solid var(--border);
+}
+.ranked li:first-child { border-top: 0; }
+.rank {
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 2.5rem;
+  line-height: 1;
+  color: var(--text3);
+}
+.ranked li:first-child .rank { color: var(--text); }  /* gold is 2.88:1 on white: too low even for large text */
+.title { font-family: var(--display); font-weight: 600; font-size: 1.375rem; line-height: 1.25; }
+.creator { display: block; font-family: var(--body); font-size: 0.875rem; color: var(--text3); font-weight: 400; }
+
+/* How it works */
+.how { padding: 3.5rem 0 4.5rem; border-top: 1px solid var(--border); }
+.how .wrap { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 3rem; }
+.how h2 { font-family: var(--display); font-weight: 600; font-size: 1.75rem; line-height: 1.2; margin: 0 0 0.75rem; }
+.how p { color: var(--text2); margin: 0; max-width: 30rem; }
+.versus { font-family: var(--display); font-style: italic; color: var(--text); }
+
+/* Document pages (privacy, support) */
+.doc { padding: 3.5rem 0 4.5rem; }
+.doc .wrap { max-width: 42rem; }
+.doc h1 { font-family: var(--display); font-weight: 600; font-size: clamp(2.25rem, 4.5vw, 3rem); line-height: 1.1; margin: 0 0 0.5rem; }
+.doc .updated { color: var(--text3); font-size: 0.9375rem; margin: 0 0 2.5rem; }
+.doc h2 { font-family: var(--display); font-weight: 600; font-size: 1.625rem; line-height: 1.25; margin: 2.5rem 0 0.75rem; }
+.doc p, .doc li { color: var(--text2); }
+.doc strong { color: var(--text); font-weight: 500; }
+.doc ul { padding-left: 1.25rem; }
+.doc li { margin: 0.35rem 0; }
+.note { background: var(--accent-lt); border-radius: 12px; padding: 1rem 1.25rem; color: var(--text); }
+
+/* Footer */
+.site-footer { border-top: 1px solid var(--border); padding: 2rem 0 2.5rem; font-size: 0.875rem; color: var(--text3); }
+.site-footer .wrap { display: flex; flex-wrap: wrap; gap: 0.75rem 2rem; justify-content: space-between; }
+.site-footer p { margin: 0; max-width: 40rem; }
+.site-footer nav { display: flex; gap: 1.5rem; }
+.site-footer a { color: var(--text2); }
+
+@media (max-width: 760px) {
+  .hero { padding: 3rem 0 3rem; }
+  .hero .wrap { grid-template-columns: 1fr; gap: 2.5rem; }
+  .how .wrap { grid-template-columns: 1fr; gap: 2rem; }
+  .site-nav { gap: 1rem; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
