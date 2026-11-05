@@ -8,7 +8,7 @@
   --text3: #6E6A67;
   --accent: #2C6B57;
   --accent-lt: #E8F2EE;
-  --gold: #B8941F;
+  --gold: #9D7E1A;  /* marks and large type only: 3.5:1 on --bg, 3.9:1 on --surface */
   --watch: #4A6FA5;
   --display: 'Cormorant Garamond', Georgia, serif;
   --body: 'Jost', system-ui, sans-serif;
@@ -89,7 +89,7 @@ a:hover { text-decoration-thickness: 2px; }
   line-height: 1;
   color: var(--text3);
 }
-.ranked li:first-child .rank { color: var(--text); }  /* gold is 2.88:1 on white: too low even for large text */
+.ranked li:first-child .rank { color: var(--gold); }  /* 40px is large type, so 3:1 is enough */
 .title { font-family: var(--display); font-weight: 600; font-size: 1.375rem; line-height: 1.25; }
 .creator { display: block; font-family: var(--body); font-size: 0.875rem; color: var(--text3); font-weight: 400; }
 
